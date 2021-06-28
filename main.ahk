@@ -32,6 +32,6 @@ GroupAdd, windowBlacklist, ahk_exe Code.exe
 ^!Numpad2::loopWithSameKey(2, 1, 300)
 ^!Numpad3::loopWithSameKey(3, 4, 15000)
 ^!Numpad4::loopWithSameKey(4, 4, 30000)
-^!Numpad5::loopWithSameKey(5, 4, 1000)
+^!Numpad5::loopWithSameKey(5, 4, 11000)
 ^!Numpad6::loopWithSameKey(6, 4, 1000)
 #MaxThreadsPerHotkey 1
