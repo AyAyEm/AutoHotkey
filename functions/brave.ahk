@@ -1,6 +1,6 @@
 braveOpen() {
     if not WinExist("ahk_exe brave.exe") {
-        run brave.exe, "C:\Program Files (x86)\BraveSoftware\Brave-Browser\Application"
+        run %USERPROFILE%\scoop\apps\brave\current\brave.exe --user-data-dir="E:\browsers\brave\userdata"
     }
 }
 braveQuit() {
@@ -8,7 +8,7 @@ braveQuit() {
         MouseGetPos, mouseX, mouseY
         MouseMove, 1345, 55
         MouseClick
-        MouseMove, 1220, 625
+        MouseMove, 1220, 640
         Sleep, 5
         MouseClick
         MouseMove, mouseX, mouseY
