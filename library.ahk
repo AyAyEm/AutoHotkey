@@ -29,18 +29,24 @@ class timerLooper {
     }
 }
 
+
 ; Get windows explorer path
-GetActiveExplorerPath()
-{
-	explorerHwnd := WinActive("ahk_class CabinetWClass")
-	if (explorerHwnd)
-	{
-		for window in ComObjCreate("Shell.Application").Windows
-		{
-			if (window.hwnd==explorerHwnd)
-			{
-				return window.Document.Folder.Self.Path
+GetExplorerPath(hwnd=0){
+	if(hwnd==0){
+		explorerHwnd := WinActive("ahk_class CabinetWClass")
+		if(explorerHwnd==0)
+			explorerHwnd := WinExist("ahk_class CabinetWClass")
+	}
+	else
+		explorerHwnd := WinExist("ahk_class CabinetWClass ahk_id " . hwnd)
+	
+	if (explorerHwnd){
+		for window in ComObjCreate("Shell.Application").Windows{
+			try{
+				if (window && window.hwnd && window.hwnd==explorerHwnd)
+					return window.Document.Folder.Self.Path
 			}
 		}
 	}
+	return false
 }

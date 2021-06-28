@@ -1,5 +1,5 @@
 directoryOpener() {
-    Path := GetActiveExplorerPath()
+    Path := GetExplorerPath()
     explorerpath := "explorer /e," Path
     key := % SubStr(A_ThisHotkey, 0)
     Sleep, 200
